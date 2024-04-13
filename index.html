@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="title">
+        Conversor de números decimales a binarios, octales y hexadecimales
+      </h1>
+      <section class="container__info">
+        <form>
+          <label class="decimal-input">
+            Escriba numero decimal entero
+            <input type="number" />
+          </label>
+          <button class="btn">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-arrow-right-left"
+            >
+              <path d="m16 3 4 4-4 4" />
+              <path d="M20 7H4" />
+              <path d="m8 21-4-4 4-4" />
+              <path d="M4 17h16" /></svg
+            >Convertir
+          </button>
+        </form>
+        <p></p>
+        <article class="resultado">
+          <div>
+            <span class="binario"></span>
+            <label>Resultado Binario</label>
+          </div>
+          <div>
+            <span class="octal"></span>
+            <label>Resultado Octal</label>
+          </div>
+          <div>
+            <span class="hexa"></span>
+            <label>Resultado hexadecimal</label>
+          </div>
+        </article>
+      </section>
+    </main>
+    <script src="conversor.js"></script>
+  </body>
+</html>
