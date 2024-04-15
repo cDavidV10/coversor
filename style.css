@@ -139,16 +139,15 @@ p {
 .error {
   align-items: center;
   background-color: #eb3131;
-  border-radius: 0.5rem;
-  bottom: 0px;
+  top: 0px;
   color: #fff;
   display: flex;
   justify-content: center;
-  left: 2px;
+  right: 2px;
   padding: 0.25rem;
   position: absolute;
   text-align: center;
-  width: 80%;
+  width: 60%;
 }
 
 @media (width >= 800px) {
@@ -177,6 +176,7 @@ p {
   }
 
   .error {
-    width: 300px;
+    right: 1rem;
+    width: 200px;
   }
 }
