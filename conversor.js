@@ -9,19 +9,32 @@ const $error = document.querySelector("p")
 $btn.addEventListener("click", (e)=>{
     e.preventDefault()
     let numDecimal = $decimal.value
-    if (numDecimal % 1 == 0){
-        numDecimal = parseInt($decimal.value)
-        $valueBinario.innerHTML = `${CONVERSOR(numDecimal, 2)}`
-        $valueOctal.innerHTML = `${CONVERSOR(numDecimal, 8)}`
-        $valueHexa.innerHTML = `${CONVERSOR(numDecimal, 16)}`
-    } else{
+    if(numDecimal){
+        if (numDecimal % 1 == 0){
+            numDecimal = parseInt($decimal.value)
+            $valueBinario.innerHTML = `${CONVERSOR(numDecimal, 2)}`
+            $valueOctal.innerHTML = `${CONVERSOR(numDecimal, 8)}`
+            $valueHexa.innerHTML = `${CONVERSOR(numDecimal, 16)}`
+        } else{
+            $error.classList.add("error")
+            $error.innerHTML = "Por favor escriba un numero entero"
+            $error.classList.add("error")
+            setTimeout(()=>{
+            $error.classList.remove("error")
+            }, 2000)
+   
+        }
+        return
+    }
+
+    if(!numDecimal){
         $error.classList.add("error")
-        $error.innerHTML = "Por favor escriba un numero entero"
+        $error.innerHTML = "Por favor ingrese un número"
         $error.classList.add("error")
         setTimeout(()=>{
             $error.classList.remove("error")
-        }, 3000)
-   
+        }, 2000)
+        return
     }
     $decimal.value = ""
 })  
