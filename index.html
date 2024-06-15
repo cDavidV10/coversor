@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="codigo-binario.png" />
+    <title>Conversor</title>
+    <meta description="Conversor de decimales a binario, octal y hexadecimal" />
+    <script src="main.js" type="module" defer></script>
   </head>
   <body>
     <main class="container">
@@ -17,7 +20,7 @@
             Escriba numero decimal entero
             <input type="number" />
           </label>
-          <button class="btn">
+          <button class="btn" id="btn">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -37,7 +40,6 @@
             >Convertir
           </button>
         </form>
-        <p></p>
         <article class="resultado">
           <div>
             <span class="binario"></span>
@@ -54,6 +56,53 @@
         </article>
       </section>
     </main>
-    <script src="conversor.js"></script>
+    <aside class="notification" id="alert"></aside>
+    <template id="error">
+      <article class="notification__content">
+        <div class="icon">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-alert-hexagon"
+          >
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path
+              d="M19.875 6.27c.7 .398 1.13 1.143 1.125 1.948v7.284c0 .809 -.443 1.555 -1.158 1.948l-6.75 4.27a2.269 2.269 0 0 1 -2.184 0l-6.75 -4.27a2.225 2.225 0 0 1 -1.158 -1.948v-7.285c0 -.809 .443 -1.554 1.158 -1.947l6.75 -3.98a2.33 2.33 0 0 1 2.25 0l6.75 3.98h-.033z"
+            />
+            <path d="M12 8v4" />
+            <path d="M12 16h.01" />
+          </svg>
+        </div>
+        <div class="text">
+          <h4>Error</h4>
+          <p>Por favor escriba un numero entero</p>
+        </div>
+      </article>
+      <button class="btn-error" id="alertClose">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-x"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M18 6l-12 12" />
+          <path d="M6 6l12 12" />
+        </svg>
+      </button>
+    </template>
   </body>
 </html>
